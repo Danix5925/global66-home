@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Global66 - Clon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-   <header class="main-header">
+
+<header class="main-header">
     <div class="header-container">
+
+        <!-- LEFT: Logo + Segmentos -->
         <div class="header-left">
             <div class="logo">
-                <img src="assets/logo-global66.svg" alt="Global66 Logo">
+                <img src="assets/global66-logo-png_seeklogo-650938.png" alt="Global66" class="logo-img">
             </div>
             <nav class="segment-nav">
                 <a href="#" class="segment-link active">PERSONAS</a>
@@ -20,31 +23,51 @@
             </nav>
         </div>
 
+        <!-- RIGHT: Nav + Acciones -->
         <div class="header-right">
             <nav class="main-nav">
-                <div class="nav-item">
-                    <a href="#">Productos</a>
-                    <span class="arrow-down"></span>
+                <div class="nav-item has-dropdown">
+                    <a href="#" class="nav-link">Productos</a>
+                    <span class="nav-arrow">
+                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="nav-item has-dropdown">
+                    <a href="#" class="nav-link">Beneficios</a>
+                    <span class="nav-arrow">
+                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
                 </div>
                 <div class="nav-item">
-                    <a href="#">Beneficios</a>
-                    <span class="arrow-down"></span>
+                    <a href="#" class="nav-link">Ayuda</a>
                 </div>
-                <a href="#" class="nav-link">Ayuda</a>
             </nav>
 
             <div class="header-actions">
+                <!-- Selector de país -->
                 <div class="country-selector">
-                    <img src="assets/colombia-flag.svg" alt="Colombia" class="flag-icon">
-                    <span class="arrow-down"></span>
+                    <img src="assets/Flag_of_Colombia.svg.png" alt="Colombia" class="flag-icon">
+                    <span class="country-arrow">
+                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
+                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
                 </div>
-                <div class="divider"></div>
-                <a href="#" class="login-link">Iniciar sesión</a>
-                <a href="#" class="btn-create-account">Crear cuenta</a>
+
+                <div class="header-divider"></div>
+
+                <!-- Botones de auth -->
+                <a href="#" class="btn-login">Iniciar sesión</a>
+                <a href="#" class="btn-signup">Crear cuenta</a>
             </div>
         </div>
+
     </div>
 </header>
-    
+
 </body>
 </html>

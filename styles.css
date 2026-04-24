@@ -1,176 +1,245 @@
-* {
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Placeholder */
 }
 
-ul {
-    list-style: none;
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a2e;
+    background: #fff;
 }
 
 a {
     text-decoration: none;
     color: inherit;
 }
-:root {
-    --primary-blue: #1d4ed8;
-    --dark-blue: #153ba3;
-    --text-main: #000000;
-    --text-nav: #333333;
-    --divider-color: #e5e7eb;
-    --transition: all 0.3s ease;
-}
 
+/* ============================================================
+   HEADER PRINCIPAL
+   ============================================================ */
 .main-header {
-    width: 100%;
-    height: 80px;
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    padding: 0 40px;
-    border-bottom: 1px solid #f3f4f6;
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8ef;
+    height: 72px;  /* era 64px */
 }
+
 
 .header-container {
-    width: 100%;
-    max-width: 1400px;
+    max-width: 1280px;
     margin: 0 auto;
+    padding: 0 32px;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 32px;
 }
 
-/* --- LADO IZQUIERDO --- */
+/* ============================================================
+   LEFT: LOGO + SEGMENTOS
+   ============================================================ */
 .header-left {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 28px;
+    flex-shrink: 0;
 }
 
-.logo img {
-    height: 32px;
-    cursor: pointer;
+.logo-img {
+    height: 180px;  
+    width: auto;
+    display: block;
 }
 
+/* --- Navegación de segmentos (PERSONAS / EMPRESAS) --- */
 .segment-nav {
     display: flex;
-    gap: 20px;
-    height: 80px; /* Para alinear el borde inferior */
+    align-items: center;
+    gap: 4px;
 }
 
 .segment-link {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text-nav);
-    display: flex;
-    align-items: center;
     position: relative;
-    padding: 0 5px;
-    transition: var(--transition);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: #9a9aaa;
+    padding: 4px 10px;
+    transition: color 0.2s ease;
 }
-
-.segment-link.active {
-    color: var(--primary-blue);
-}
-
-/* Línea azul inferior para el estado activo */
-.segment-link.active::after {
-    content: "";
+.segment-link::after {
+    content: '';
     position: absolute;
-    bottom: 15px;
-    left: 0;
-    width: 100%;
+    bottom: -26px;  /* ajusta según el nuevo height */
+    left: 10px;
+    right: 10px;
     height: 3px;
-    background-color: var(--primary-blue);
-    border-radius: 2px;
+    background: #2f4de0;
+    border-radius: 2px 2px 0 0;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.segment-link.active {
+    color: #2f4de0;
 }
 
-/* --- LADO DERECHO --- */
+.segment-link.active::after {
+    opacity: 1;
+}
+
+.segment-link:hover {
+    color: #2f4de0;
+}
+
+/* ============================================================
+   RIGHT: NAV + ACCIONES
+   ============================================================ */
 .header-right {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 32px;
+    flex: 1;
+    justify-content: flex-end;
 }
 
+/* --- Navegación principal --- */
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 4px;
 }
 
-.nav-item, .nav-link {
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--text-nav);
+.nav-item {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
+    padding: 8px 10px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: var(--transition);
+    transition: background 0.15s ease;
 }
 
-.nav-item:hover, .nav-link:hover {
-    color: var(--primary-blue);
+.nav-item:hover {
+    background: #f4f5ff;
 }
 
-/* Flechas simples (puedes usar un icono o CSS) */
-.arrow-down::after {
-    content: "⌄";
-    font-size: 12px;
-    margin-left: 2px;
+.nav-link {
+    font-size: 15px;
+    font-weight: 500;
+    color: #1a1a2e;
+    transition: color 0.15s ease;
 }
 
+.nav-item:hover .nav-link {
+    color: #2f4de0;
+}
+
+.nav-arrow {
+    display: flex;
+    align-items: center;
+    color: #6b6b80;
+    transition: transform 0.2s ease, color 0.15s ease;
+}
+
+.nav-item:hover .nav-arrow {
+    color: #2f4de0;
+    transform: rotate(180deg);
+}
+
+/* ============================================================
+   HEADER ACTIONS: PAÍS + DIVISOR + BOTONES
+   ============================================================ */
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
 }
 
+/* --- Selector de país --- */
 .country-selector {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
+    padding: 6px 8px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.country-selector:hover {
+    background: #f4f5ff;
 }
 
 .flag-icon {
-    width: 24px;
-    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
 }
 
-.divider {
+.country-arrow {
+    display: flex;
+    align-items: center;
+    color: #6b6b80;
+    transition: transform 0.2s ease;
+}
+
+.country-selector:hover .country-arrow {
+    transform: rotate(180deg);
+}
+
+/* --- Divisor vertical --- */
+.header-divider {
     width: 1px;
-    height: 30px;
-    background-color: var(--divider-color);
+    height: 28px;
+    background: #e0e0ea;
+    flex-shrink: 0;
 }
 
-.login-link {
+/* --- Botón Iniciar sesión --- */
+.btn-login {
+    font-size: 15px;
+    font-weight: 500;
+    color: #2f4de0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+}
+
+.btn-login:hover {
+    background: #f0f2ff;
+    color: #1a35c4;
+}
+
+/* --- Botón Crear cuenta --- */
+.btn-signup {
     font-size: 15px;
     font-weight: 600;
-    color: var(--primary-blue);
-    transition: var(--transition);
-}
-
-.login-link:hover {
-    color: var(--dark-blue);
-}
-
-.btn-create-account {
-    background-color: var(--primary-blue);
     color: #ffffff;
-    padding: 12px 24px;
+    background: #2f4de0;
+    padding: 10px 22px;
     border-radius: 50px;
-    font-size: 15px;
-    font-weight: 700;
-    transition: var(--transition);
+    white-space: nowrap;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(47, 77, 224, 0.25);
 }
 
-.btn-create-account:hover {
-    background-color: var(--dark-blue);
+.btn-signup:hover {
+    background: #1a35c4;
+    box-shadow: 0 4px 16px rgba(47, 77, 224, 0.38);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2);
+}
+
+.btn-signup:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(47, 77, 224, 0.2);
 }
