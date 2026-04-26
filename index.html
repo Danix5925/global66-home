@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,67 +8,170 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header class="main-header">
-    <div class="header-container">
+    <header class="main-header">
+        <div class="header-container">
 
-        <!-- LEFT: Logo + Segmentos -->
-        <div class="header-left">
-            <div class="logo">
-                <img src="assets/global66-logo-png_seeklogo-650938.png" alt="Global66" class="logo-img">
+            <!-- LEFT: Logo + Segmentos -->
+            <div class="header-left">
+                <div class="logo">
+                    <img src="assets/global66-logo-png_seeklogo-650938.png" alt="Global66" class="logo-img">
+                </div>
+                <nav class="segment-nav">
+                    <a href="#" class="segment-link active">PERSONAS</a>
+                    <a href="#" class="segment-link">EMPRESAS</a>
+                </nav>
             </div>
-            <nav class="segment-nav">
-                <a href="#" class="segment-link active">PERSONAS</a>
-                <a href="#" class="segment-link">EMPRESAS</a>
-            </nav>
-        </div>
 
-        <!-- RIGHT: Nav + Acciones -->
-        <div class="header-right">
-            <nav class="main-nav">
-                <div class="nav-item has-dropdown">
-                    <a href="#" class="nav-link">Productos</a>
-                    <span class="nav-arrow">
-                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
-                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
-                </div>
-                <div class="nav-item has-dropdown">
-                    <a href="#" class="nav-link">Beneficios</a>
-                    <span class="nav-arrow">
-                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
-                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
-                </div>
-                <div class="nav-item">
-                    <a href="#" class="nav-link">Ayuda</a>
-                </div>
-            </nav>
+            <!-- RIGHT: Nav + Acciones -->
+            <div class="header-right">
+                <nav class="main-nav">
+                    <div class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">Productos</a>
+                        <span class="nav-arrow">
+                            <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
+                                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
 
-            <div class="header-actions">
-                <!-- Selector de país -->
-                <div class="country-selector">
-                    <img src="assets/Flag_of_Colombia.svg.png" alt="Colombia" class="flag-icon">
-                    <span class="country-arrow">
-                        <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
-                            <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
-                </div>
+                    </div>
+                    <div class="nav-item">
+                        <div class="nav-item has-dropdown">
+                            <a href="#" class="nav-link">Beneficios</a>
+                            <span class="nav-arrow">
+                                <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
+                                    <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
 
-                <div class="header-divider"></div>
+                            <!-- DROPDOWN BENEFICIOS -->
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2f4de0"
+                                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
+                                            <path d="M12 6V12L16 14" />
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <span class="dropdown-title">Beneficios Globales</span>
+                                        <span class="dropdown-desc">Disfruta de beneficios únicos para ti</span>
+                                    </div>
+                                </a>
 
-                <!-- Botones de auth -->
-                <a href="#" class="btn-login">Iniciar sesión</a>
-                <a href="#" class="btn-signup">Crear cuenta</a>
-            </div>
-        </div>
+                                <a href="#" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2f4de0"
+                                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="18" cy="5" r="3" />
+                                            <circle cx="6" cy="12" r="3" />
+                                            <circle cx="18" cy="19" r="3" />
+                                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <span class="dropdown-title">Invita y Gana</span>
+                                        <span class="dropdown-desc">Gana dólares invitando amigos</span>
+                                    </div>
+                                </a>
 
+                                <a href="#" class="dropdown-item">
+                                    <div class="dropdown-icon">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2f4de0"
+                                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                            <circle cx="9" cy="7" r="4" />
+                                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-text">
+                                        <span class="dropdown-title">
+                                            Afiliados Global66
+                                            <span class="badge-nuevo">NUEVO</span>
+                                        </span>
+                                        <span class="dropdown-desc">Se un afiliado de Global66 y genera ingresos
+                                            compartiendo a tu comunidad</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#" class="nav-link">Ayuda</a>
+                    </div>
+                </nav>
+
+                <div class="header-actions">
+                   
+
+                        <!-- DROPDOWN PAÍSES -->
+                        <div class="country-selector">
+    <input type="checkbox" id="country-toggle" class="country-toggle-input">
+    <label for="country-toggle" class="country-trigger">
+        <img src="assets/Flag_of_Colombia.svg.png" alt="Colombia" class="flag-icon">
+        <span class="country-arrow">
+            <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
+                <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+    </label>
+
+    <!-- Overlay gris -->
+    <label for="country-toggle" class="country-overlay"></label>
+
+    <!-- DROPDOWN PAÍSES -->
+    <div class="country-dropdown">
+        <a href="#" class="country-item">
+            <span class="world-icon">🌎</span>
+            <span>Resto del mundo</span>
+        </a>
+        <a href="#" class="country-item">
+            <img src="https://flagcdn.com/w40/cl.png" alt="Chile" class="country-flag">
+            <span>Chile</span>
+        </a>
+        <a href="#" class="country-item">
+            <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" class="country-flag">
+            <span>Argentina</span>
+        </a>
+        <a href="#" class="country-item">
+            <img src="https://flagcdn.com/w40/ec.png" alt="Ecuador" class="country-flag">
+            <span>Ecuador</span>
+        </a>
+        <a href="#" class="country-item">
+            <img src="https://flagcdn.com/w40/mx.png" alt="México" class="country-flag">
+            <span>México</span>
+        </a>
+        <a href="#" class="country-item">
+            <img src="https://flagcdn.com/w40/pe.png" alt="Perú" class="country-flag">
+            <span>Perú</span>
+        </a>
+        <a href="#" class="country-item">
+            <img src="https://flagcdn.com/w40/py.png" alt="Paraguay" class="country-flag">
+            <span>Paraguay</span>
+        </a>
+        <a href="#" class="country-item">
+            <img src="https://flagcdn.com/w40/cr.png" alt="Costa Rica" class="country-flag">
+            <span>Costa Rica</span>
+        </a>
     </div>
-</header>
+</div>
+
+                    <div class="header-divider"></div>
+
+                    <!-- Botones de auth -->
+                    <a href="#" class="btn-login">Iniciar sesión</a>
+                    <a href="#" class="btn-signup">Crear cuenta</a>
+                </div>
+            </div>
+
+        </div>
+    </header>
 
 </body>
+
 </html>

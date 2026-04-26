@@ -127,7 +127,7 @@ a {
 }
 
 .nav-item:hover {
-    background: #f4f5ff;
+    background: transparent; 
 }
 
 .nav-link {
@@ -138,20 +138,17 @@ a {
 }
 
 .nav-item:hover .nav-link {
-    color: #2f4de0;
+    color: #111111;
 }
 
 .nav-arrow {
     display: flex;
     align-items: center;
-    color: #6b6b80;
+    color: #2f4de0;
     transition: transform 0.2s ease, color 0.15s ease;
 }
 
-.nav-item:hover .nav-arrow {
-    color: #2f4de0;
-    transform: rotate(180deg);
-}
+
 
 /* ============================================================
    HEADER ACTIONS: PAÍS + DIVISOR + BOTONES
@@ -188,7 +185,7 @@ a {
 .country-arrow {
     display: flex;
     align-items: center;
-    color: #6b6b80;
+    color: #2f4de0;
     transition: transform 0.2s ease;
 }
 
@@ -199,9 +196,10 @@ a {
 /* --- Divisor vertical --- */
 .header-divider {
     width: 1px;
-    height: 28px;
-    background: #e0e0ea;
+    height: 24px;
+    background: #2f4de0;
     flex-shrink: 0;
+    margin: 0 4px;
 }
 
 /* --- Botón Iniciar sesión --- */
@@ -242,4 +240,198 @@ a {
 .btn-signup:active {
     transform: translateY(0);
     box-shadow: 0 2px 6px rgba(47, 77, 224, 0.2);
+}
+
+.nav-item {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 18px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.13);
+    padding: 12px;
+    min-width: 320px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 100;
+}
+
+/* Mostrar al hacer hover en el nav-item */
+.nav-item:hover .dropdown-menu {
+    display: flex;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    transition: background 0.15s ease;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background: #f4f5ff;
+}
+
+.dropdown-icon {
+    width: 42px;
+    height: 42px;
+    background: #f0f2ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dropdown-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dropdown-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111111;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropdown-desc {
+    font-size: 13px;
+    font-weight: 400;
+    color: #888888;
+    line-height: 1.4;
+}
+
+/* Badge NUEVO */
+.badge-nuevo {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    background: #22c55e;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+/* ============================================================
+   DROPDOWN PAÍSES
+   ============================================================ */
+/* ============================================================
+   SELECTOR DE PAÍS CON CHECKBOX TRICK
+   ============================================================ */
+.country-toggle-input {
+    display: none;
+}
+
+.country-selector {
+    position: relative;
+}
+
+.country-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.country-trigger:hover {
+    background: #f4f5ff;
+}
+
+/* Overlay gris oscuro */
+.country-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 98;
+    cursor: default;
+}
+
+/* Dropdown oculto por defecto */
+.country-dropdown {
+    position: absolute;
+    top: calc(100% + 18px);
+    right: 0;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.13);
+    padding: 10px;
+    min-width: 220px;
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 100;
+}
+
+/* Cuando el checkbox está checked — mostrar todo */
+.country-toggle-input:checked ~ .country-overlay {
+    display: block;
+}
+
+.country-toggle-input:checked ~ .country-dropdown {
+    display: flex;
+}
+
+/* Rotar flecha al abrir */
+.country-toggle-input:checked ~ .country-trigger .country-arrow {
+    transform: rotate(180deg);
+}
+
+.country-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #111111;
+    transition: background 0.15s ease;
+    cursor: pointer;
+}
+
+.country-item:hover {
+    background: #f4f5ff;
+    color: #2f4de0;
+}
+
+.country-flag {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.world-icon {
+    font-size: 22px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.country-arrow {
+    display: flex;
+    align-items: center;
+    color: #2f4de0;
+    transition: transform 0.2s ease;
 }
