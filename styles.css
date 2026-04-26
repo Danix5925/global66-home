@@ -435,3 +435,115 @@ a {
     color: #2f4de0;
     transition: transform 0.2s ease;
 }
+
+/* ============================================================
+   DROPDOWN PRODUCTOS — 3 COLUMNAS
+   ============================================================ */
+.dropdown-productos {
+    left: -200px;
+    transform: none;
+    min-width: 860px;
+    padding: 24px;
+    gap: 0;
+    display: none;
+    flex-direction: row;
+}
+
+.nav-item:hover .dropdown-productos {
+    display: flex;
+}
+
+.dropdown-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px 0 0;
+    border-right: 1px solid #f0f0f5;
+}
+
+.dropdown-col:last-child {
+    border-right: none;
+    padding-right: 0;
+    padding-left: 24px;
+}
+
+.dropdown-col:nth-child(2) {
+    padding-left: 24px;
+}
+
+.dropdown-col-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #aaaaaa;
+    margin-bottom: 10px;
+}
+
+.dropdown-col-divider {
+    height: 1px;
+    background: #f0f0f5;
+    margin-bottom: 8px;
+}
+
+/* ============================================================
+   DROPDOWN PRODUCTOS — ANCHO COMPLETO
+   ============================================================ */
+.dropdown-productos {
+    position: fixed;
+    top: 68px; /* altura de tu header */
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-width: unset;
+    transform: none;
+    padding: 32px 80px;
+    gap: 0;
+    display: none;
+    flex-direction: row;
+    border-radius: 0;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.13);
+}
+
+.nav-item:hover .dropdown-productos {
+    display: flex;
+}
+
+.dropdown-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 32px 0 0;
+    border-right: 1px solid #f0f0f5;
+}
+
+.dropdown-col:last-child {
+    border-right: none;
+    padding-right: 0;
+    padding-left: 32px;
+}
+
+.dropdown-col:nth-child(2) {
+    padding-left: 32px;
+}
+
+.dropdown-col-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #aaaaaa;
+    margin-bottom: 10px;
+}
+
+.dropdown-col-divider {
+    height: 1px;
+    background: #f0f0f5;
+    margin-bottom: 8px;
+}
+
+.nav-item.has-dropdown {
+    cursor: default;
+}
+
+.nav-item.has-dropdown .nav-link {
+    cursor: default;
+}
