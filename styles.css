@@ -547,3 +547,182 @@ a {
 .nav-item.has-dropdown .nav-link {
     cursor: default;
 }
+
+.hero {
+    background: #2f4de0;
+    border-radius: 20px;
+    margin: 16px 24px;
+    padding: 60px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 420px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 520px;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+}
+
+.hero-title {
+    font-size: 64px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    min-height: 160px;
+    margin-bottom: 40px;
+}
+
+.hero-cursor {
+    display: inline-block;
+    color: #ffffff;
+    font-weight: 300;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.btn-hero-primary {
+    background: #ffffff;
+    color: #1a1a2e;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 32px;
+    border-radius: 50px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-hero-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.btn-hero-secondary {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-hero-secondary:hover {
+    opacity: 0.8;
+}
+
+.hero-typed::before {
+    content: '';
+    animation: typewriter 12s steps(1) infinite;
+}
+
+.hero-typed::before {
+    content: '';
+    animation: typewriter 9s steps(1) infinite;
+}
+
+@keyframes typewriter {
+    /* FRASE 1: ENVIAR DINERO AL MUNDO */
+    0%   { content: ''; }
+    1%   { content: 'E'; }
+    2%   { content: 'EN'; }
+    3%   { content: 'ENV'; }
+    4%   { content: 'ENVI'; }
+    5%   { content: 'ENVIA'; }
+    6%   { content: 'ENVIAR'; }
+    7%   { content: 'ENVIAR D'; }
+    8%   { content: 'ENVIAR DI'; }
+    9%   { content: 'ENVIAR DIN'; }
+    10%  { content: 'ENVIAR DINE'; }
+    11%  { content: 'ENVIAR DINER'; }
+    12%  { content: 'ENVIAR DINERO'; }
+    13%  { content: 'ENVIAR DINERO A'; }
+    14%  { content: 'ENVIAR DINERO AL'; }
+    15%  { content: 'ENVIAR DINERO AL M'; }
+    16%  { content: 'ENVIAR DINERO AL MU'; }
+    17%  { content: 'ENVIAR DINERO AL MUN'; }
+    18%  { content: 'ENVIAR DINERO AL MUND'; }
+    19%  { content: 'ENVIAR DINERO AL MUNDO'; }
+    /* pausa */
+    26%  { content: 'ENVIAR DINERO AL MUNDO'; }
+    /* borrar rápido */
+    27%  { content: 'ENVIAR DINERO AL MUND'; }
+    28%  { content: 'ENVIAR DINERO AL MU'; }
+    29%  { content: 'ENVIAR DINERO AL'; }
+    30%  { content: 'ENVIAR DINERO'; }
+    31%  { content: 'ENVIAR'; }
+    32%  { content: ''; }
+
+    /* FRASE 2: COBRAR EN OTROS PAÍSES */
+    33%  { content: 'C'; }
+    34%  { content: 'CO'; }
+    35%  { content: 'COB'; }
+    36%  { content: 'COBR'; }
+    37%  { content: 'COBRA'; }
+    38%  { content: 'COBRAR'; }
+    39%  { content: 'COBRAR E'; }
+    40%  { content: 'COBRAR EN'; }
+    41%  { content: 'COBRAR EN O'; }
+    42%  { content: 'COBRAR EN OT'; }
+    43%  { content: 'COBRAR EN OTR'; }
+    44%  { content: 'COBRAR EN OTRO'; }
+    45%  { content: 'COBRAR EN OTROS'; }
+    46%  { content: 'COBRAR EN OTROS P'; }
+    47%  { content: 'COBRAR EN OTROS PA'; }
+    48%  { content: 'COBRAR EN OTROS PAÍ'; }
+    49%  { content: 'COBRAR EN OTROS PAÍSES'; }
+    /* pausa */
+    56%  { content: 'COBRAR EN OTROS PAÍSES'; }
+    /* borrar rápido */
+    57%  { content: 'COBRAR EN OTROS PAÍ'; }
+    58%  { content: 'COBRAR EN OTROS'; }
+    59%  { content: 'COBRAR EN'; }
+    60%  { content: 'COBRAR'; }
+    61%  { content: ''; }
+
+    /* FRASE 3: PAGAR EN EL EXTRANJERO */
+    62%  { content: 'P'; }
+    63%  { content: 'PA'; }
+    64%  { content: 'PAG'; }
+    65%  { content: 'PAGA'; }
+    66%  { content: 'PAGAR'; }
+    67%  { content: 'PAGAR E'; }
+    68%  { content: 'PAGAR EN'; }
+    69%  { content: 'PAGAR EN E'; }
+    70%  { content: 'PAGAR EN EL'; }
+    71%  { content: 'PAGAR EN EL E'; }
+    72%  { content: 'PAGAR EN EL EX'; }
+    73%  { content: 'PAGAR EN EL EXT'; }
+    74%  { content: 'PAGAR EN EL EXTR'; }
+    75%  { content: 'PAGAR EN EL EXTRA'; }
+    76%  { content: 'PAGAR EN EL EXTRAN'; }
+    77%  { content: 'PAGAR EN EL EXTRANJE'; }
+    78%  { content: 'PAGAR EN EL EXTRANJERO'; }
+    /* pausa */
+    85%  { content: 'PAGAR EN EL EXTRANJERO'; }
+    /* borrar rápido */
+    86%  { content: 'PAGAR EN EL EXTRAN'; }
+    87%  { content: 'PAGAR EN EL'; }
+    88%  { content: 'PAGAR EN'; }
+    89%  { content: 'PAGAR'; }
+    90%  { content: ''; }
+    100% { content: ''; }
+}
