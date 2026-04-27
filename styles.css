@@ -27,14 +27,13 @@ a {
     z-index: 1000;
     background: #ffffff;
     border-bottom: 1px solid #e8e8ef;
-    height: 72px;  /* era 64px */
+    height: 72px;
 }
-
 
 .header-container {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 0px;
+    padding: 0 24px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -53,12 +52,11 @@ a {
 }
 
 .logo-img {
-    height: 180px;  
+    height: 180px;
     width: auto;
     display: block;
 }
 
-/* --- Navegación de segmentos (PERSONAS / EMPRESAS) --- */
 .segment-nav {
     display: flex;
     align-items: center;
@@ -74,10 +72,11 @@ a {
     padding: 4px 10px;
     transition: color 0.2s ease;
 }
+
 .segment-link::after {
     content: '';
     position: absolute;
-    bottom: -26px;  /* ajusta según el nuevo height */
+    bottom: -26px;
     left: 10px;
     right: 10px;
     height: 3px;
@@ -86,6 +85,7 @@ a {
     opacity: 0;
     transition: opacity 0.2s ease;
 }
+
 .segment-link.active {
     color: #2f4de0;
 }
@@ -117,6 +117,7 @@ a {
 }
 
 .nav-item {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -127,7 +128,7 @@ a {
 }
 
 .nav-item:hover {
-    background: transparent; 
+    background: transparent;
 }
 
 .nav-link {
@@ -148,10 +149,8 @@ a {
     transition: transform 0.2s ease, color 0.15s ease;
 }
 
-
-
 /* ============================================================
-   HEADER ACTIONS: PAÍS + DIVISOR + BOTONES
+   HEADER ACTIONS
    ============================================================ */
 .header-actions {
     display: flex;
@@ -160,7 +159,15 @@ a {
 }
 
 /* --- Selector de país --- */
+.country-toggle-input {
+    display: none;
+}
+
 .country-selector {
+    position: relative;
+}
+
+.country-trigger {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -170,7 +177,7 @@ a {
     transition: background 0.15s ease;
 }
 
-.country-selector:hover {
+.country-trigger:hover {
     background: #f4f5ff;
 }
 
@@ -189,8 +196,68 @@ a {
     transition: transform 0.2s ease;
 }
 
-.country-selector:hover .country-arrow {
+/* Overlay */
+.country-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 98;
+    cursor: default;
+}
+
+/* Dropdown país */
+.country-dropdown {
+    position: absolute;
+    top: calc(100% + 18px);
+    right: 0;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.13);
+    padding: 10px;
+    min-width: 220px;
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 100;
+}
+
+.country-toggle-input:checked ~ .country-overlay {
+    display: block;
+}
+
+.country-toggle-input:checked ~ .country-dropdown {
+    display: flex;
+}
+
+.country-toggle-input:checked ~ .country-trigger .country-arrow {
     transform: rotate(180deg);
+}
+
+.country-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #111111;
+    transition: background 0.15s ease;
+    cursor: pointer;
+}
+
+.country-item:hover {
+    background: #f4f5ff;
+    color: #2f4de0;
+}
+
+.country-flag {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 /* --- Divisor vertical --- */
@@ -242,10 +309,9 @@ a {
     box-shadow: 0 2px 6px rgba(47, 77, 224, 0.2);
 }
 
-.nav-item {
-    position: relative;
-}
-
+/* ============================================================
+   DROPDOWNS
+   ============================================================ */
 .dropdown-menu {
     position: absolute;
     top: calc(100% + 18px);
@@ -262,7 +328,6 @@ a {
     z-index: 100;
 }
 
-/* Mostrar al hacer hover en el nav-item */
 .nav-item:hover .dropdown-menu {
     display: flex;
 }
@@ -314,7 +379,6 @@ a {
     line-height: 1.4;
 }
 
-/* Badge NUEVO */
 .badge-nuevo {
     font-size: 10px;
     font-weight: 700;
@@ -325,172 +389,10 @@ a {
     border-radius: 20px;
 }
 
-/* ============================================================
-   DROPDOWN PAÍSES
-   ============================================================ */
-/* ============================================================
-   SELECTOR DE PAÍS CON CHECKBOX TRICK
-   ============================================================ */
-.country-toggle-input {
-    display: none;
-}
-
-.country-selector {
-    position: relative;
-}
-
-.country-trigger {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 8px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.15s ease;
-}
-
-.country-trigger:hover {
-    background: #f4f5ff;
-}
-
-/* Overlay gris oscuro */
-.country-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 98;
-    cursor: default;
-}
-
-/* Dropdown oculto por defecto */
-.country-dropdown {
-    position: absolute;
-    top: calc(100% + 18px);
-    right: 0;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.13);
-    padding: 10px;
-    min-width: 220px;
-    display: none;
-    flex-direction: column;
-    gap: 2px;
-    z-index: 100;
-}
-
-/* Cuando el checkbox está checked — mostrar todo */
-.country-toggle-input:checked ~ .country-overlay {
-    display: block;
-}
-
-.country-toggle-input:checked ~ .country-dropdown {
-    display: flex;
-}
-
-/* Rotar flecha al abrir */
-.country-toggle-input:checked ~ .country-trigger .country-arrow {
-    transform: rotate(180deg);
-}
-
-.country-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 12px 14px;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 500;
-    color: #111111;
-    transition: background 0.15s ease;
-    cursor: pointer;
-}
-
-.country-item:hover {
-    background: #f4f5ff;
-    color: #2f4de0;
-}
-
-.country-flag {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-}
-
-.world-icon {
-    font-size: 22px;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-
-.country-arrow {
-    display: flex;
-    align-items: center;
-    color: #2f4de0;
-    transition: transform 0.2s ease;
-}
-
-/* ============================================================
-   DROPDOWN PRODUCTOS — 3 COLUMNAS
-   ============================================================ */
-.dropdown-productos {
-    left: -200px;
-    transform: none;
-    min-width: 860px;
-    padding: 24px;
-    gap: 0;
-    display: none;
-    flex-direction: row;
-}
-
-.nav-item:hover .dropdown-productos {
-    display: flex;
-}
-
-.dropdown-col {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 0 24px 0 0;
-    border-right: 1px solid #f0f0f5;
-}
-
-.dropdown-col:last-child {
-    border-right: none;
-    padding-right: 0;
-    padding-left: 24px;
-}
-
-.dropdown-col:nth-child(2) {
-    padding-left: 24px;
-}
-
-.dropdown-col-title {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: #aaaaaa;
-    margin-bottom: 10px;
-}
-
-.dropdown-col-divider {
-    height: 1px;
-    background: #f0f0f5;
-    margin-bottom: 8px;
-}
-
-/* ============================================================
-   DROPDOWN PRODUCTOS — ANCHO COMPLETO
-   ============================================================ */
+/* --- Dropdown Productos (full width) --- */
 .dropdown-productos {
     position: fixed;
-    top: 68px; /* altura de tu header */
+    top: 72px;
     left: 0;
     right: 0;
     width: 100%;
@@ -548,6 +450,203 @@ a {
     cursor: default;
 }
 
+/* ============================================================
+   HAMBURGER BUTTON (oculto en desktop)
+   ============================================================ */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.15s ease;
+    flex-shrink: 0;
+}
+
+.hamburger-btn:hover {
+    background: #f4f5ff;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #111111;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Hamburger → X */
+.hamburger-btn.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger-btn.is-open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger-btn.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ============================================================
+   MOBILE MENU OVERLAY
+   ============================================================ */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ffffff;
+    z-index: 999;
+    overflow-y: auto;
+    padding: 24px 20px 40px;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mobile-menu.is-open {
+    display: flex;
+}
+
+/* Segmentos en mobile */
+.mobile-segment-nav {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e8e8ef;
+}
+
+.mobile-segment-link {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: #888;
+    padding: 6px 14px;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+}
+
+.mobile-segment-link.active {
+    color: #2f4de0;
+    background: #f0f2ff;
+}
+
+/* Accordion items en mobile */
+.mobile-nav-section {
+    border-bottom: 1px solid #f0f0f5;
+}
+
+.mobile-nav-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    text-align: left;
+}
+
+.mobile-nav-toggle .toggle-arrow {
+    display: flex;
+    align-items: center;
+    color: #2f4de0;
+    transition: transform 0.25s ease;
+}
+
+.mobile-nav-toggle.is-open .toggle-arrow {
+    transform: rotate(180deg);
+}
+
+.mobile-nav-items {
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    padding-bottom: 12px;
+}
+
+.mobile-nav-items.is-open {
+    display: flex;
+}
+
+.mobile-nav-items .dropdown-item {
+    padding: 10px 8px;
+}
+
+/* Enlace simple en mobile */
+.mobile-nav-link {
+    display: block;
+    padding: 16px 4px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    border-bottom: 1px solid #f0f0f5;
+}
+
+/* País en mobile */
+.mobile-country-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 4px;
+    border-bottom: 1px solid #f0f0f5;
+}
+
+.mobile-country-row img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.mobile-country-row span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #2f4de0;
+}
+
+/* Acciones en mobile */
+.mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.mobile-actions .btn-login {
+    display: block;
+    text-align: center;
+    padding: 13px;
+    border: 1.5px solid #2f4de0;
+    border-radius: 50px;
+    font-size: 15px;
+}
+
+.mobile-actions .btn-signup {
+    display: block;
+    text-align: center;
+    padding: 13px;
+    font-size: 15px;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
 .hero {
     background: #2f4de0;
     border-radius: 20px;
@@ -599,6 +698,7 @@ a {
     display: flex;
     align-items: center;
     gap: 24px;
+    flex-wrap: wrap;
 }
 
 .btn-hero-primary {
@@ -629,18 +729,13 @@ a {
     opacity: 0.8;
 }
 
-.hero-typed::before {
-    content: '';
-    animation: typewriter 12s steps(1) infinite;
-}
-
+/* Typewriter animation */
 .hero-typed::before {
     content: '';
     animation: typewriter 9s steps(1) infinite;
 }
 
 @keyframes typewriter {
-    /* FRASE 1: ENVIAR DINERO AL MUNDO */
     0%   { content: ''; }
     1%   { content: 'E'; }
     2%   { content: 'EN'; }
@@ -661,17 +756,13 @@ a {
     17%  { content: 'ENVIAR DINERO AL MUN'; }
     18%  { content: 'ENVIAR DINERO AL MUND'; }
     19%  { content: 'ENVIAR DINERO AL MUNDO'; }
-    /* pausa */
     26%  { content: 'ENVIAR DINERO AL MUNDO'; }
-    /* borrar rápido */
     27%  { content: 'ENVIAR DINERO AL MUND'; }
     28%  { content: 'ENVIAR DINERO AL MU'; }
     29%  { content: 'ENVIAR DINERO AL'; }
     30%  { content: 'ENVIAR DINERO'; }
     31%  { content: 'ENVIAR'; }
     32%  { content: ''; }
-
-    /* FRASE 2: COBRAR EN OTROS PAÍSES */
     33%  { content: 'C'; }
     34%  { content: 'CO'; }
     35%  { content: 'COB'; }
@@ -689,16 +780,12 @@ a {
     47%  { content: 'COBRAR EN OTROS PA'; }
     48%  { content: 'COBRAR EN OTROS PAÍ'; }
     49%  { content: 'COBRAR EN OTROS PAÍSES'; }
-    /* pausa */
     56%  { content: 'COBRAR EN OTROS PAÍSES'; }
-    /* borrar rápido */
     57%  { content: 'COBRAR EN OTROS PAÍ'; }
     58%  { content: 'COBRAR EN OTROS'; }
     59%  { content: 'COBRAR EN'; }
     60%  { content: 'COBRAR'; }
     61%  { content: ''; }
-
-    /* FRASE 3: PAGAR EN EL EXTRANJERO */
     62%  { content: 'P'; }
     63%  { content: 'PA'; }
     64%  { content: 'PAG'; }
@@ -716,13 +803,154 @@ a {
     76%  { content: 'PAGAR EN EL EXTRAN'; }
     77%  { content: 'PAGAR EN EL EXTRANJE'; }
     78%  { content: 'PAGAR EN EL EXTRANJERO'; }
-    /* pausa */
     85%  { content: 'PAGAR EN EL EXTRANJERO'; }
-    /* borrar rápido */
     86%  { content: 'PAGAR EN EL EXTRAN'; }
     87%  { content: 'PAGAR EN EL'; }
     88%  { content: 'PAGAR EN'; }
     89%  { content: 'PAGAR'; }
     90%  { content: ''; }
     100% { content: ''; }
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+    .dropdown-productos {
+        padding: 24px 40px;
+    }
+
+    .hero {
+        padding: 48px 40px;
+        margin: 12px 16px;
+    }
+
+    .hero-title {
+        font-size: 52px;
+        min-height: 130px;
+    }
+
+    /* Ocultar "Iniciar sesión" y mostrar solo "Crear cuenta" */
+    .btn-login,
+    .header-divider {
+        display: none;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET PEQUEÑA (≤860px)
+   Ocultar nav y mostrar hamburger
+   ============================================================ */
+@media (max-width: 860px) {
+    /* Mostrar hamburger */
+    .hamburger-btn {
+        display: flex;
+    }
+
+    /* Ocultar nav desktop y acciones */
+    .header-right {
+        display: none;
+    }
+
+    /* Ajustar segmentos en header */
+    .segment-nav {
+        display: none;
+    }
+
+    .header-left {
+        gap: 0;
+    }
+
+    /* Hero tablet */
+    .hero {
+        padding: 40px 32px;
+        margin: 12px 16px;
+        min-height: 360px;
+    }
+
+    .hero-title {
+        font-size: 44px;
+        min-height: 110px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MÓVIL (≤600px)
+   ============================================================ */
+@media (max-width: 600px) {
+    .main-header {
+        height: 64px;
+    }
+
+    .mobile-menu {
+        top: 64px;
+    }
+
+    .header-container {
+        padding: 0 16px;
+    }
+
+    .logo-img {
+        height: 140px;
+    }
+
+    /* Hero móvil */
+    .hero {
+        border-radius: 16px;
+        margin: 12px 12px;
+        padding: 32px 24px;
+        min-height: unset;
+    }
+
+    .hero-title {
+        font-size: 36px;
+        min-height: 90px;
+        margin-bottom: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .btn-hero-primary {
+        font-size: 15px;
+        padding: 12px 24px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-hero-secondary {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    /* País dropdown móvil */
+    .country-dropdown {
+        right: auto;
+        left: -80px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MÓVIL MUY PEQUEÑO (≤380px)
+   ============================================================ */
+@media (max-width: 380px) {
+    .hero-title {
+        font-size: 30px;
+        min-height: 76px;
+    }
+
+    .logo-img {
+        height: 120px;
+    }
 }
