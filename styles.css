@@ -11,6 +11,7 @@ body {
     font-family: 'Inter', sans-serif;
     color: #1a1a2e;
     background: #fff;
+    overflow-x: hidden;
 }
 
 a {
@@ -22,11 +23,11 @@ a {
    HEADER PRINCIPAL
    ============================================================ */
 .main-header {
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 1000;
     background: #ffffff;
-    border-bottom: 1px solid #e8e8ef;
+    border-bottom: none;
     height: 72px;
 }
 
@@ -964,5 +965,187 @@ a {
 
     .logo-img {
         height: 120px;
+    }
+}
+
+/* ============================================================
+   SOCIAL PROOF
+   ============================================================ */
+.social-proof {
+    margin: 16px 24px;
+    background: #f0f2ff;
+    border-radius: 20px;
+    padding: 32px 48px;
+}
+
+.social-proof-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* --- Ratings row --- */
+.ratings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.ratings-left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.rating-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.rating-icon {
+    width: 52px;
+    height: 52px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.rating-score {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rating-stars {
+    color: #f59e0b;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.rating-store {
+    font-size: 13px;
+    color: #888;
+    margin-top: 2px;
+}
+
+.rating-store a {
+    color: #2f4de0;
+    text-decoration: underline;
+}
+
+.rating-divider {
+    width: 1px;
+    height: 40px;
+    background: #d0d4f0;
+}
+
+/* --- Descarga --- */
+.ratings-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.download-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #888;
+}
+
+.download-badges {
+    display: flex;
+    gap: 12px;
+}
+
+.badge-btn img {
+    display: block;
+    height: 40px;
+    width: auto;
+}
+
+/* --- Carrusel --- */
+.carousel-wrapper {
+    overflow: hidden;
+    border-top: 1px solid #dde0f5;
+    padding-top: 24px;
+}
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    animation: carousel-scroll 18s linear infinite;
+    width: max-content;
+}
+
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes carousel-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.carousel-logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #9aa0c0;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+    cursor: default;
+}
+
+.carousel-logo:hover {
+    color: #2f4de0;
+}
+
+.carousel-logo.lafm {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.carousel-logo.lafm span {
+    color: #f59e0b;
+}
+
+.carousel-logo.semana {
+    background: #1a1a2e;
+    color: #fff;
+    padding: 4px 14px;
+    border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .social-proof {
+        padding: 24px 20px;
+        margin: 12px 12px;
+    }
+    .ratings-right {
+        align-items: flex-start;
+    }
+    .ratings-row {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
