@@ -968,37 +968,32 @@ a {
     }
 }
 
-/* ============================================================
-   SOCIAL PROOF
-   ============================================================ */
 .social-proof {
-    margin: 16px 24px;
+    margin: 8px 24px 24px;
     background: #f0f2ff;
     border-radius: 20px;
-    padding: 32px 48px;
+    padding: 36px 48px 28px;
 }
 
-.social-proof-container {
-    max-width: 1280px;
-    margin: 0 auto;
+.social-proof-inner {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 24px;
 }
 
-/* --- Ratings row --- */
-.ratings-row {
+.sp-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 24px;
+    transform: scale(1.1); 
 }
 
 .ratings-left {
     display: flex;
     align-items: center;
     gap: 32px;
+    margin-left: 120px;
 }
 
 .rating-item {
@@ -1008,15 +1003,21 @@ a {
 }
 
 .rating-icon {
-    width: 52px;
-    height: 52px;
-    background: #ffffff;
+    width: 56px;
+    height: 56px;
+    background: #fff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.rating-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
 }
 
 .rating-score {
@@ -1030,8 +1031,7 @@ a {
 
 .rating-stars {
     color: #f59e0b;
-    font-size: 14px;
-    letter-spacing: 1px;
+    font-size: 13px;
 }
 
 .rating-store {
@@ -1047,23 +1047,24 @@ a {
 
 .rating-divider {
     width: 1px;
-    height: 40px;
-    background: #d0d4f0;
+    height: 44px;
+    background: #dde0f5;
+    flex-shrink: 0;
 }
 
-/* --- Descarga --- */
-.ratings-right {
+.sp-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
+    margin-right: 100px;
 }
 
 .download-label {
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.08em;
-    color: #888;
+    letter-spacing: 0.1em;
+    color: #555;
 }
 
 .download-badges {
@@ -1071,23 +1072,26 @@ a {
     gap: 12px;
 }
 
-.badge-btn img {
-    display: block;
-    height: 40px;
+.download-badges img {
+    height: 44px;
     width: auto;
+    display: block;
 }
 
-/* --- Carrusel --- */
+/* CARRUSEL */
 .carousel-wrapper {
     overflow: hidden;
     border-top: 1px solid #dde0f5;
     padding-top: 24px;
+    max-width: 55%; /* ← ajusta este % para que llegue hasta donde quieras */
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 .carousel-track {
     display: flex;
     align-items: center;
-    gap: 80px;
+    gap: 64px;
     animation: carousel-scroll 18s linear infinite;
     width: max-content;
 }
@@ -1101,51 +1105,51 @@ a {
     100% { transform: translateX(-50%); }
 }
 
-.carousel-logo {
-    font-size: 20px;
-    font-weight: 800;
-    color: #9aa0c0;
-    white-space: nowrap;
-    letter-spacing: 0.02em;
+.carousel-img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
     flex-shrink: 0;
-    transition: color 0.2s ease;
-    cursor: default;
+    filter: grayscale(100%) opacity(60%);
+    transition: filter 0.2s ease;
 }
 
-.carousel-logo:hover {
-    color: #2f4de0;
+.carousel-img:hover {
+    filter: grayscale(0%) opacity(100%);
 }
 
-.carousel-logo.lafm {
-    background: #1a1a2e;
-    color: #fff;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 16px;
-}
-
-.carousel-logo.lafm span {
-    color: #f59e0b;
-}
-
-.carousel-logo.semana {
-    background: #1a1a2e;
-    color: #fff;
-    padding: 4px 14px;
-    border-radius: 4px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .social-proof {
-        padding: 24px 20px;
-        margin: 12px 12px;
-    }
-    .ratings-right {
-        align-items: flex-start;
-    }
-    .ratings-row {
+/* RESPONSIVE */
+@media (max-width: 860px) {
+    .sp-top {
         flex-direction: column;
         align-items: flex-start;
     }
+    .sp-right {
+        align-items: flex-start;
+    }
 }
+
+@media (max-width: 600px) {
+    .social-proof {
+        padding: 24px 20px;
+        margin: 8px 12px 12px;
+        border-radius: 16px;
+    }
+    .ratings-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .rating-divider {
+        width: 100%;
+        height: 1px;
+    }
+    .download-badges {
+        flex-direction: column;
+    }
+    .download-badges img {
+        width: 100%;
+        height: auto;
+    }
+}
+
