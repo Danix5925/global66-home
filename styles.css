@@ -337,7 +337,7 @@ a { text-decoration: none; color: inherit; }
     border-bottom: 1px solid #f0f0f5;
     flex-shrink: 0;
 }
-.mm-logo { height: 36px; width: auto; }
+.mm-logo { height: 120px; width: auto; }
 .mm-close {
     width: 36px; height: 36px;
     display: flex; align-items: center; justify-content: center;
@@ -795,6 +795,9 @@ a { text-decoration: none; color: inherit; }
     .hero-image { width: 44%; }
     .features { padding: 48px 40px; }
     .features-container { gap: 36px; }
+    .hamburger-btn span {
+        background: #2f4de0;
+    }
 }
 
 /* ============================================================
@@ -806,6 +809,9 @@ a { text-decoration: none; color: inherit; }
     .segment-nav { display: none; }
     .header-left { gap: 0; }
     .header-mobile-right { display: flex; }
+    .hamburger-btn span {
+        background: #2f4de0;
+    }
 
     /* Hero */
     .hero {
@@ -817,7 +823,7 @@ a { text-decoration: none; color: inherit; }
     .hero-content { padding-bottom: 40px; }
     .hero-title { font-size: 42px; min-height: 110px; margin-bottom: 28px; }
     .hero-subtitle { font-size: 13px; }
-    .hero-image { width: 42%; }
+    .hero-image { display: none;}
 
     /* Social proof */
     .social-proof { padding: 28px 32px 24px; margin: 8px 16px 16px; }
@@ -836,7 +842,10 @@ a { text-decoration: none; color: inherit; }
 @media (max-width: 600px) {
     .main-header { height: 64px; }
     .header-container { padding: 0 16px; }
-    .logo-img { height: 40px; }
+    .logo-img { height: 140px; }
+    .hamburger-btn span {
+        background: #2f4de0;
+    }
 
     /* Ocultar "Crear cuenta" en mobile, solo hamburger */
     .header-mobile-right .btn-signup { display: none; }
@@ -858,7 +867,7 @@ a { text-decoration: none; color: inherit; }
     .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; }
     .btn-hero-primary { text-align: center; padding: 13px 24px; font-size: 15px; }
     .btn-hero-secondary { text-align: center; font-size: 14px; }
-    .hero-image { width: 80%; margin: 20px auto 0; align-self: center; }
+    .hero-image { display: none; }
 
     /* Social proof */
     .social-proof { padding: 20px 18px; margin: 8px 12px 12px; border-radius: 16px; }
@@ -881,6 +890,9 @@ a { text-decoration: none; color: inherit; }
    ============================================================ */
 @media (max-width: 400px) {
     .hero-title { font-size: 30px; min-height: 90px; }
-    .logo-img { height: 36px; }
-    .hero-image { width: 90%; }
+    .logo-img { height: 100px; }
+    .hero-image { display: none; }
+    .hamburger-btn span {
+        background: #2f4de0;
+    }
 }
