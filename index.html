@@ -301,6 +301,168 @@
         });
     });
 </script>
+<!-- ============================================================ CONVERTER SECTION ============================================================ -->
+<section class="converter-section">
+    <div class="converter-left">
+        <div class="converter-left-content">
+            <h2 class="converter-title">
+                Compra Dólares sal <strong>mejor precio</strong>
+            </h2>
+            <p class="converter-desc">
+                Compra dólares al mejor precio. Convierte tus pesos a USD al instante y hazlos crecer hasta 6% E.A en <strong>Tu Cuenta Global</strong>
+            </p>
+            <p class="converter-tagline">Sin papeleos, sin letra chica.</p>
+            <div class="converter-actions">
+                <a href="#" class="btn-converter-primary">Conocer más</a>
+                <a href="#" class="btn-converter-video">
+                    <span class="btn-play-icon">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                    </span>
+                    Mira cómo funciona
+                </a>
+            </div>
+        </div>
+    </div>
 
+    <div class="converter-right">
+        <div class="converter-card">
+            <div class="conv-mode-row">
+                <span class="conv-mode-label">Qué deseas hacer:</span>
+                <div class="conv-mode-options">
+                    <label class="conv-radio">
+                        <input type="radio" name="conv-mode" value="comprar" checked>
+                        <span class="conv-radio-circle"></span>
+                        Comprar
+                    </label>
+                    <label class="conv-radio">
+                        <input type="radio" name="conv-mode" value="vender">
+                        <span class="conv-radio-circle"></span>
+                        Vender
+                    </label>
+                </div>
+            </div>
+
+            <div class="conv-divider"></div>
+
+            <div class="conv-field">
+                <span class="conv-field-label">Monto a convertir:</span>
+                <div class="conv-field-row">
+                    <input type="text" class="conv-amount-input" id="conv-input" value="1.298.235" inputmode="numeric">
+                    <button class="conv-currency-btn" id="from-currency-btn">
+                        <img src="https://flagcdn.com/w40/co.png" alt="COP" class="conv-flag">
+                        <span>COP</span>
+                        <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="#555" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="conv-divider"></div>
+
+            <div class="conv-field">
+                <span class="conv-field-label">Monto a recibir:</span>
+                <div class="conv-field-row">
+                    <span class="conv-result" id="conv-result">356</span>
+                    <button class="conv-currency-btn conv-currency-btn--to">
+                        <img src="https://flagcdn.com/w40/us.png" alt="USD" class="conv-flag">
+                        <span>USD</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="conv-divider"></div>
+
+            <div class="conv-details">
+                <div class="conv-detail-row">
+                    <span class="conv-detail-key">Costo de tipo de cambio:</span>
+                    <span class="conv-detail-val" id="conv-fee">12.982,35 COP</span>
+                </div>
+                <div class="conv-detail-row">
+                    <span class="conv-detail-key">Monto a convertir:</span>
+                    <span class="conv-detail-val" id="conv-net">1.285.252,65 COP</span>
+                </div>
+                <div class="conv-detail-row">
+                    <span class="conv-detail-key">Tipo de cambio:</span>
+                    <span class="conv-detail-val" id="conv-rate">3.610,26 COP</span>
+                </div>
+            </div>
+
+            <div class="conv-instant-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2f4de0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Conversión instantánea
+            </div>
+
+            <a href="#" class="btn-conv-cta" id="conv-cta-btn">Comprar ahora</a>
+        </div>
+
+    </div>
+</section>
+
+<script>
+(function() {
+    const RATE = 3610.26;
+    const FEE_RATE = 0.01;
+
+    const input  = document.getElementById('conv-input');
+    const result = document.getElementById('conv-result');
+    const feeEl  = document.getElementById('conv-fee');
+    const netEl  = document.getElementById('conv-net');
+    const rateEl = document.getElementById('conv-rate');
+    const ctaBtn = document.getElementById('conv-cta-btn');
+    const radios = document.querySelectorAll('input[name="conv-mode"]');
+
+    let mode = 'comprar';
+
+    function formatCOP(n) {
+        return n.toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' COP';
+    }
+    function formatUSD(n) {
+        return Math.floor(n).toLocaleString('es-CO');
+    }
+    function rawValue(str) {
+        return parseFloat(str.replace(/\./g, '').replace(',', '.')) || 0;
+    }
+
+    function calculate() {
+        const raw = rawValue(input.value);
+        const fee = raw * FEE_RATE;
+        const net = raw - fee;
+        const usd = net / RATE;
+
+        feeEl.textContent  = formatCOP(fee);
+        netEl.textContent  = formatCOP(net);
+        rateEl.textContent = '3.610,26 COP';
+        result.textContent = formatUSD(usd);
+        ctaBtn.textContent = mode === 'comprar' ? 'Comprar ahora' : 'Vender ahora';
+    }
+
+    input.addEventListener('input', function () {
+        let digits = this.value.replace(/\D/g, '');
+        if (!digits) { this.value = ''; result.textContent = '0'; return; }
+        this.value = parseInt(digits, 10).toLocaleString('es-CO');
+        calculate();
+    });
+
+    radios.forEach(r => r.addEventListener('change', function() {
+        mode = this.value;
+        calculate();
+    }));
+
+    calculate();
+})();
+</script>
+<section class="benefits-summary">
+    <div class="benefits-summary-container">
+
+        <h2 class="benefits-summary-title">
+            Descubre todos los beneficios de<br>
+            <span class="highlight-blue">Tu Cuenta Global</span>
+        </h2>
+
+        <p class="benefits-summary-desc">
+            Una cuenta para manejar tu dinero por el mundo.
+        </p>
+
+    </div>
+</section>
 </body>
 </html>
