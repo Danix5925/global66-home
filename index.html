@@ -464,5 +464,428 @@
 
     </div>
 </section>
+<section class="feature-section">
+    <div class="feature-container">
+        <div class="feature-image">
+            <img src="assets\celular1.png" alt="App Global66">
+        </div>
+        <div class="feature-text">
+            <h2 class="feature-title">
+                Abre tu<br>
+                <span class="blue-text">Cuenta en Dólares</span>
+            </h2>
+            <p class="feature-desc">
+                Abre una cuenta en dólares 100% digital para recibir, enviar, mantener o convertir tus dólares a pesos cuando lo necesites.
+            </p>
+            <a href="#" class="btn-primary">Conocer más</a>
+        </div>
+    </div>
+</section>
+
+<section class="feature-section feature-reverse">
+    <div class="feature-container">
+        <div class="feature-image">
+            <img src="assets\2.png" alt="App Global66 Convierte Monedas">
+        </div>
+        <div class="feature-text">
+            <h2 class="feature-title title-lg">
+                <span class="blue-text">Convierte</span> tus pesos a dólares, euros y otras monedas
+            </h2>
+            <p class="feature-desc text-md">
+                Convierte tu dinero a más de 10 monedas como el dólar o el euro. Úsalo para ahorrar, enviar dinero o pagar con tarjeta en cualquier lugar del mundo.
+            </p>
+            <div class="feature-actions">
+                <a href="#" class="btn-primary btn-md">Conocer más</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature-section">
+    <div class="feature-container">
+        <div class="feature-image">
+            <img src="assets\3.png" alt="App Global66 Recibe Dinero">
+        </div>
+        <div class="feature-text">
+            <h2 class="feature-title title-lg">
+                Recibe<br>
+                <span class="blue-text">Dólares y Euros</span> en Tu Cuenta Global
+            </h2>
+            <p class="feature-desc text-md">
+                Recibe transferencias en dólares o euros desde bancos en Estados Unidos y Europa. Como si tuvieras una cuenta en el extranjero.
+            </p>
+            <div class="feature-actions">
+                <a href="#" class="btn-primary btn-md">Conocer más</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature-section feature-reverse">
+    <div class="feature-container">
+        <div class="feature-image">
+            <img src="assets\4.png" alt="Tarjeta Mastercard Global66">
+        </div>
+        <div class="feature-text">
+            <h2 class="feature-title title-lg">
+                <span class="blue-text">Tarjeta Mastercard</span> Global66
+            </h2>
+            <p class="feature-desc text-md">
+                10 monedas en 1 tarjeta. Con tu Smart Card, pagas directamente desde tus dólares, euros o pesos, sin tipos de cambio y sin cobro de mantención.
+            </p>
+            <div class="feature-actions">
+                <a href="#" class="btn-primary btn-md">Conocer más</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature-section">
+    <div class="feature-container">
+        <div class="feature-image">
+            <img src="assets\5.png" alt="App Global66 Transferencias Internacionales">
+        </div>
+        <div class="feature-text">
+            <h2 class="feature-title title-lg">
+                Transferencias a <span class="blue-text">+70 destinos</span>
+            </h2>
+            <p class="feature-desc text-md">
+                Envía dinero fácil y seguro a cuentas bancarias en más de 70 países. Siempre con un precio transparente.
+            </p>
+            <div class="feature-actions">
+                <a href="#" class="btn-primary btn-md">Conocer más</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature-section feature-reverse">
+    <div class="feature-container">
+        <div class="feature-image">
+            <img src="assets\6.png" alt="App Global66 Rendimiento de cuenta">
+        </div>
+        <div class="feature-text">
+            <h2 class="feature-title title-lg">
+                <span class="blue-text">Rendimiento del 11%</span> E.A.
+            </h2>
+            <p class="feature-desc text-md">
+                Sin montos mínimos y con disponibilidad siempre que lo requiera. Calculamos tus rendimientos diariamente, sin falta.
+            </p>
+            <div class="feature-actions">
+                <a href="#" class="btn-primary btn-md">Conocer más</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="empresa-banner">
+    <div class="empresa-banner-container">
+        <div class="empresa-banner-text">
+            <h2 class="empresa-banner-title">
+                Si tu empresa es global,<br>
+                tu cuenta también debería serlo
+            </h2>
+            <p class="empresa-banner-desc">
+                Cobra, paga y maneja dólares y otras monedas desde una cuenta a nombre de tu empresa. Para empresas inteligentes, sin costos ocultos ni de mantención.
+            </p>
+            <a href="#" class="btn-empresa">Ver más</a>
+        </div>
+        <div class="empresa-banner-image">
+            <img src="assets\tu cuenta.png" alt="Global66 Empresas">
+        </div>
+    </div>
+</section>
+<!-- ============================================================ REVIEWS ============================================================ -->
+<section class="reviews-section">
+    <div class="reviews-header">
+        <p class="reviews-pretitle">Ya somos más de</p>
+        <h2 class="reviews-title">2.5 millones de personas felices :)</h2>
+    </div>
+
+    <div class="reviews-carousel-wrapper">
+        <div class="reviews-track" id="reviews-track">
+            <img src="assets\img borrar.png" alt="Opiniones 1" class="reviews-img">
+            <img src="assets\opiniones22.png" alt="Opiniones 2" class="reviews-img">
+        </div>
+
+        <div class="reviews-dots">
+            <button class="reviews-dot active" data-index="0"></button>
+            <button class="reviews-dot" data-index="1"></button>
+        </div>
+    </div>
+</section>
+
+<script>
+(function() {
+    const track = document.getElementById('reviews-track');
+    const dots = document.querySelectorAll('.reviews-dot');
+    let current = 0;
+    const total = dots.length;
+
+    function goTo(index) {
+        current = index;
+        track.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => goTo(parseInt(dot.dataset.index)));
+    });
+
+    setInterval(() => goTo((current + 1) % total), 5000);
+})();
+</script>
+
+<!-- ============================================================ SEGURIDAD ============================================================ -->
+<section class="security-section">
+    <div class="security-container">
+        <div class="security-image">
+            <img src="assets\muchacha.png" alt="Seguridad Global66">
+        </div>
+        <div class="security-text">
+            <h2 class="security-title">
+                Tu información financiera<br>
+                <span class="security-highlight">segura y protegida</span>
+            </h2>
+            <p class="security-desc">
+                Tus operaciones son confidenciales, no compartimos datos con terceros y son manejados bajo estrictos controles de seguridad
+            </p>
+        </div>
+    </div>
+</section>
+<!-- ============================================================ PAÍSES ============================================================ -->
+<section class="countries-section">
+    <div class="countries-header">
+        <h2 class="countries-title">
+            Envía dinero a más de<br>
+            <span class="countries-highlight">70 países</span>
+        </h2>
+    </div>
+
+    <div class="countries-grid">
+        <div class="country-item"><img src="https://flagcdn.com/w40/us.png" alt=""> Estados Unidos</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/ar.png" alt=""> Argentina</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/cl.png" alt=""> Chile</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/pe.png" alt=""> Perú</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/mx.png" alt=""> México</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/ec.png" alt=""> Ecuador</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/ad.png" alt=""> Andorra</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/at.png" alt=""> Austria</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/au.png" alt=""> Australia</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/bd.png" alt=""> Bangladesh</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/be.png" alt=""> Bélgica</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/bo.png" alt=""> Bolivia</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/br.png" alt=""> Brasil</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/ca.png" alt=""> Canadá</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/ch.png" alt=""> Suiza</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/cr.png" alt=""> Costa Rica</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/cy.png" alt=""> Chipre</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/cz.png" alt=""> República Checa</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/de.png" alt=""> Alemania</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/dk.png" alt=""> Dinamarca</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/do.png" alt=""> República Dominicana</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/ee.png" alt=""> Estonia</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/es.png" alt=""> España</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/fi.png" alt=""> Finlandia</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/fr.png" alt=""> Francia</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/gb.png" alt=""> Reino Unido</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/gb.png" alt=""> Reino Unido</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/gr.png" alt=""> Grecia</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/gt.png" alt=""> Guatemala</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/hu.png" alt=""> Hungría</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/id.png" alt=""> Indonesia</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/ie.png" alt=""> Irlanda</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/in.png" alt=""> India</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/is.png" alt=""> Islandia</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/it.png" alt=""> Italia</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/li.png" alt=""> Liechtenstein</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/lk.png" alt=""> Sri Lanka</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/lt.png" alt=""> Lituania</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/lu.png" alt=""> Luxemburgo</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/lv.png" alt=""> Letonia</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/ma.png" alt=""> Marruecos</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/mc.png" alt=""> Mónaco</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/mt.png" alt=""> Malta</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/my.png" alt=""> Malasia</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/nl.png" alt=""> Países Bajos</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/no.png" alt=""> Noruega</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/no.png" alt=""> Noruega</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/pl.png" alt=""> Polonia</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/pl.png" alt=""> Polonia</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/pt.png" alt=""> Portugal</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/py.png" alt=""> Paraguay</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/ro.png" alt=""> Rumania</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/se.png" alt=""> Suecia</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/se.png" alt=""> Suecia</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/sg.png" alt=""> Singapur</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/sk.png" alt=""> República Eslovaca</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/sm.png" alt=""> San Marino</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/th.png" alt=""> Tailandia</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/uy.png" alt=""> Uruguay</div>
+        <div class="country-item"><img src="https://flagcdn.com/w40/va.png" alt=""> Santa Sede</div>
+
+        <div class="country-item"><img src="https://flagcdn.com/w40/ve.png" alt=""> Venezuela</div>
+    </div>
+</section>
+
+<!-- ============================================================ SE GLOBAL ============================================================ -->
+<section class="seglobal-section">
+    <div class="seglobal-container">
+        <div class="seglobal-text">
+            <h2 class="seglobal-title">
+                Sé Global,<br>
+                <span class="seglobal-highlight">paga como local</span>
+            </h2>
+            <p class="seglobal-desc">
+                Tu Cuenta Global para pagar, convertir, enviar dinero y más.
+            </p>
+            <div class="seglobal-badges">
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store"></a>
+            </div>
+        </div>
+        <div class="seglobal-image">
+            <img src="assets\celulares.png" alt="App Global66">
+        </div>
+    </div>
+</section>
+<!-- ============================================================ FOOTER ============================================================ -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Links -->
+        <div class="footer-links">
+            <div class="footer-col">
+                <span class="footer-col-title">FEATURES</span>
+                <a href="#">Invita y gana</a>
+                <a href="#">Club de fundadores</a>
+                <a href="#">¿Qué nos respalda?</a>
+                <a href="#">Glosario</a>
+                <a href="#">Conversor de monedas</a>
+                <a href="#">Alertas de tipo de cambio</a>
+                <a href="#">Códigos SWIFT</a>
+                <a href="#">Precio dólar hoy</a>
+                <a href="#">Precio euro hoy</a>
+                <a href="#">Comprar dólares</a>
+                <a href="#">Casa de Cambio</a>
+                <a href="#">Conviértete en afiliado</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-col-title">EMPRESA</span>
+                <a href="#">Trabaja con nosotros</a>
+                <a href="#">Estados Financieros y Dictamen</a>
+                <a href="#">¿Quiénes somos?</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-col-title">AYUDA</span>
+                <a href="#">Blog</a>
+                <a href="#">Reclamo por compras</a>
+                <a href="#">Preguntas frecuentes</a>
+                <a href="#">Centro de ayuda</a>
+            </div>
+            <div class="footer-col">
+                <span class="footer-col-title">LINKS DE INTERÉS</span>
+                <a href="#">Tarifario</a>
+                <a href="#">Educación financiera</a>
+                <a href="#">Defensor del consumidor</a>
+                <a href="#">Código gobierno corporativo</a>
+                <a href="#">Código ética y conducta</a>
+                <a href="#">Política conflicto de interés</a>
+                <a href="#">Canal transparente</a>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="#" class="footer-social-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="#" class="footer-social-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href="#" class="footer-social-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="#" class="footer-social-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="#" class="footer-social-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+                </a>
+            </div>
+
+            <div class="footer-badges">
+                <img src="assets\logo-fogafin.png" alt="Fogafin" class="footer-badge-img">
+                <span class="footer-badge-vigilado">VIGILADO</span>
+                <span class="footer-badge-sfc">SUPERINTENDENCIA FINANCIERA DE COLOMBIA</span>
+            
+    <a href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="footer-store-badge">
+    </a>
+    <a href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" class="footer-store-badge">
+    </a>
+</div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- Legal -->
+        <div class="footer-legal">
+            <p>© Global66 es la marca registrada de la plataforma de productos y servicios financieros que permite acceder al ecosistema digital denominado comercialmente CUENTA GLOBAL, a través de la cual los clientes pueden contratar y operar diferentes servicios y productos financieros, en distintos países, respetando siempre las regulaciones legales de cada uno.</p>
+            <p>La contratación de los servicios, como los de transferencias, pagos, compra, cobro y/o recepción de divisas en diferentes monedas se centralizan en Global 81 SpA, que es una sociedad constituida y vigente de acuerdo a las leyes de la República de Chile, la que no es fiscalizada por la Comisión para el Mercado Financiero.</p>
+            <p>El servicio de custodia y administración de los saldos de la cuenta en dólares es efectuado por la compañía 100x, CORP.</p>
+            <p>*El depósito electrónico en pesos colombianos es ofrecido por Global Colombia 81 S.A. compañía vigilada por la Superintendencia Financiera de Colombia y amparado por FOGAFIN.</p>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>Copyright © 2026 Global66.</p>
+            <p>Calle 100 #9a-45, Piso 8, Bogotá, Colombia.</p>
+            <div class="footer-legal-links">
+                <a href="#">Términos y condiciones Global 81 SpA</a>
+                <a href="#">Términos y Condiciones Global Colombia 81</a>
+                <a href="#">Políticas de privacidad</a>
+                <a href="#">Condiciones de Uso de WhatsApp</a>
+                <a href="#">Términos y condiciones Cuatro Arboles SAS</a>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <!-- Transfer links -->
+        <div class="footer-transfers">
+            <span>Transferencias internacionales:</span>
+            <a href="#">Enviar dinero a Perú</a> |
+            <a href="#">Enviar dinero a Colombia</a> |
+            <a href="#">Enviar dinero a Argentina</a> |
+            <a href="#">Enviar dinero a Ecuador</a> |
+            <a href="#">Enviar dinero a España</a> |
+            <a href="#">Enviar dinero a Londres</a> |
+            <a href="#">Enviar dinero a Mexico</a> |
+            <a href="#">Enviar dinero a Australia</a>
+        </div>
+
+    </div>
+</footer>
 </body>
 </html>
